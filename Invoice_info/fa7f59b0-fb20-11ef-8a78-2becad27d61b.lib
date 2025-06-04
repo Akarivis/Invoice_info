@@ -1,0 +1,77 @@
+/*
+编写库：可添加多个Function的子程序，每个子程序内编写的流程可作为单独的命令重复使用到流程。
+发布库：编写完子程序后，通过"发布库"填写命令配置信息，将命令库打包到指定目录。
+使用库：在流程项目内，通过命令中心>自定义命令库目录导入安装后，在命令面板的扩展命令目录下使用。
+*/
+invoice_info_function()
+Function invoice_info_function()
+	invoice_info = []
+	path = @res"智慧恒通24.11.xls"
+	objExcelWorkBook = Excel.OpenExcel(path, true, "Excel", "", "")
+	objExcelWorkBook = Excel.BindBook("智慧恒通24.11.xls")
+	iRet = Excel.GetRowsCount(objExcelWorkBook, "Sheet1")
+
+    //按每行依次拿数据
+	For i = 4 To iRet step 1
+		row = "A" & i
+		Data = Excel.ReadRow(objExcelWorkBook, "Sheet1", row, true)
+		If Data[2] = ""
+			Continue
+		Else
+			payer = Data[0]
+			voyage_no = Data[1]
+			mbl_no = Data[2]
+			transaction_date = Data[3]
+			charge_name = Data[4]
+			currency = Data[5]
+			amount = Data[6]
+			customer_number = Data[7]
+			box = Data[8]
+			destination = Data[9]
+
+
+            
+			box = Split(box, "'")
+            container_type = box[0]
+			container_number=  box[1]
+
+			If currency = "USD"
+				usdTotal = amount //美元
+				invoice_info_item = {
+					"payer": payer, //客户
+					"voyage_no": voyage_no, //船名航次
+					"mbl_no": mbl_no, //提运单号(M)
+					"transaction_datet": transaction_date, //航期
+					"charge_name": charge_name, //费用名称
+					"currency ": currency, //开票币别
+					// "amount":amount,//开票金额
+					"customer_number": customer_number, //客户编号
+                    "container_type":container_type,//箱型
+                    "container_number":container_number,//箱号
+					"destination": destination, //目的地
+					"usdTotal": usdTotal //美元
+				}
+
+
+			ElseIf currency = "CNY"
+				rmbTotals = amount //人民币
+				invoice_info_item = {
+					"payer": payer, //客户
+					"voyage_no": voyage_no, //船名航次
+					"mbl_no": mbl_no, //提运单号(M)
+					"transaction_datet": transaction_date, //航期
+					"charge_name": charge_name, //费用名称
+					"currency ": currency, //开票币别
+					// "amount":amount,//开票金额
+					"customer_number": customer_number, //客户编号
+                    "container_type":container_type,//箱型
+                    "container_number":container_number,//箱号
+					"destination": destination, //目的地
+					"rmbTotals": rmbTotals //人民币
+				}
+			End If
+		End If
+		invoice_info = push(invoice_info, invoice_info_item)
+	Next 
+	TracePrint invoice_info
+End Function

@@ -1,0 +1,6 @@
+[2025/3/7 15:07:33][INFO][][0] 工作路径已切换到 D:\project\Invoice_info\
+[2025/3/7 15:07:33][INFO][fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib][0] 流程 fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib 开始运行
+[2025/3/7 15:07:34][ERROR][fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib][17] 运行发生错误，流程中止
+错误信息如下：
+fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib 第17行：只有数组或字典类型才能被索引
+[2025/3/7 15:07:34][INFO][fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib][0] D:\project\Invoice_info\fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib 运行已结束

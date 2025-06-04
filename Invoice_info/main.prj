@@ -1,0 +1,159 @@
+{
+    "id": "fa7f59b0-fb20-11ef-8a78-2becad27d61b",
+    "name": "Invoice_info",
+    "type": "library",
+    "build": "",
+    "version": "6.0.0.221121",
+    "file": "fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib",
+    "breakpoints": {},
+    "layout": {
+        "config": {
+            "global": {
+                "splitterSize": 1,
+                "splitterExtra": 8,
+                "enableEdgeDock": false,
+                "rootOrientationVertical": true,
+                "tabEnableClose": false,
+                "tabEnableRename": false,
+                "tabSetEnableDrag": false,
+                "tabSetEnableMaximize": false,
+                "tabSetMinWidth": 280,
+                "tabSetMinHeight": 200,
+                "borderBarSize": 24,
+                "borderAutoSelectTabWhenClosed": true,
+                "borderEnableAutoHide": true
+            },
+            "borders": [
+                {
+                    "type": "border",
+                    "selected": 0,
+                    "size": 250,
+                    "minSize": 250,
+                    "location": "left",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "command",
+                            "name": "命令",
+                            "component": "commandPanel",
+                            "config": {
+                                "i18nKey": "command"
+                            },
+                            "className": ""
+                        },
+                        {
+                            "type": "tab",
+                            "id": "timeline",
+                            "name": "时间线",
+                            "component": "timeLinePanel",
+                            "config": {
+                                "i18nKey": "timeline"
+                            },
+                            "className": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "border",
+                    "selected": 0,
+                    "size": 280,
+                    "minSize": 280,
+                    "location": "right",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "commandProperty",
+                            "name": "属性",
+                            "component": "commandPropertyPanel",
+                            "config": {
+                                "i18nKey": "property"
+                            },
+                            "className": ""
+                        },
+                        {
+                            "type": "tab",
+                            "id": "commandVariable",
+                            "name": "变量",
+                            "component": "commandVariablePanel",
+                            "config": {
+                                "i18nKey": "variable"
+                            },
+                            "className": ""
+                        }
+                    ]
+                }
+            ],
+            "layout": {
+                "type": "row",
+                "id": "body",
+                "children": [
+                    {
+                        "type": "tabset",
+                        "id": "#b2c510f4-d1e1-4f5d-b355-0cec195219a1",
+                        "weight": 128.75536480686696,
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "fa7f59b0-fb20-11ef-8a78-2becad27d61b",
+                                "name": "Invoice_info",
+                                "helpText": "D:\\project\\Invoice_info\\fa7f59b0-fb20-11ef-8a78-2becad27d61b.lib",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "type": "task",
+                                    "id": "fa7f59b0-fb20-11ef-8a78-2becad27d61b"
+                                },
+                                "enableClose": false,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-lib.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "fa7f59b0-fb20-11ef-8a78-2becad27d61bInvoice_info",
+                                "name": "界面库",
+                                "helpText": "界面库",
+                                "component": "repository",
+                                "config": {
+                                    "selfControl": false,
+                                    "id": "fa7f59b0-fb20-11ef-8a78-2becad27d61b"
+                                },
+                                "enableClose": false,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-res.png"
+                            }
+                        ],
+                        "active": true
+                    },
+                    {
+                        "type": "tabset",
+                        "id": "buttom",
+                        "weight": 71.24463519313305,
+                        "height": 332,
+                        "enableDrop": false,
+                        "enableDrag": false,
+                        "enableDivide": false,
+                        "enableClose": false,
+                        "minHeight": 32,
+                        "headerHeight": 32,
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "output",
+                                "name": "输出",
+                                "component": "outputPanel",
+                                "config": {
+                                    "i18nKey": "output"
+                                },
+                                "enableDrag": false,
+                                "className": "",
+                                "enableRenderOnDemand": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "type": "library",
+        "version": "1.0.21"
+    },
+    "editorMode": "sourceCode"
+}
